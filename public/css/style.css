@@ -1,0 +1,71 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #ebebeb;
+}
+
+#header {
+  background-color: #eac926;
+}
+
+.banner {
+  width: 100%;
+}
+
+#header input {
+  width: 80%;
+  height: 35px;
+}
+
+.menu ul {
+  list-style-type: none;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: black;
+}
+
+.producto img {
+  width: 350px;
+  display: block;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+p {
+  font-size: 12px;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.price {
+  font-size: 18px;
+}
+
+.discount {
+  font-size: 16px;
+  color: #39b54a;
+}
+
+.description {
+  font-size: 16px;
+}
+
+.ml-verde {
+  color: #39b54a;
+}
+
+.ml-azul {
+  color: #03264c;
+}
+
+.bg-white {
+  background-color: white;
+}
