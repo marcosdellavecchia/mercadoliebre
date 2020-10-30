@@ -65,3 +65,12 @@ p {
 .ml-azul {
   color: #03264c;
 }
+
+form {
+  padding: 20px 0px;
+  background-color: white;
+}
+
+.hidden {
+  display: none;
+}
