@@ -24,5 +24,5 @@ app.get("/login", (req, res) => {
 });
 
 app.get("*", (req, res) => {
-  res.send("Houston, tenemos un error 404!");
+  res.send("Error 404 - No encontramos esta página :/");
 });
