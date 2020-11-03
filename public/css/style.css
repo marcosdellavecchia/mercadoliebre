@@ -24,7 +24,7 @@ header {
   display: block;
 }
 
-header input {
+.search {
   width: 50%;
 }
 
@@ -53,11 +53,11 @@ nav {
   display: none;
 }
 
-nav ul {
+nav > ul {
   list-style-type: none;
 }
 
-nav li a {
+nav > ul > li > a {
   text-decoration: none;
   color: black;
 }
@@ -74,7 +74,7 @@ main h2 {
 
 article {
   padding: 15px;
-  /* Agrega distancia entre los articulos arriba y abajo */
+  /* Agrega distancia entre los articulos arriba y abajo (no costados) */
   margin: 20px 0px;
 }
 
