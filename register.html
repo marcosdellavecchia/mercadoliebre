@@ -11,28 +11,30 @@
 <body>
 
     <header>
-        <img class="logo" src="/images/logo-mercado-liebre.svg" alt="Logo Mercado Liebre">
-        <form action="#">
-        <input class="search" type="search" name="busqueda" placeholder="Buscar productos, marcas y más">
-    </form>
-        <p> <i class="fas fa-hand-holding-usd"></i> Comprá en cuotas y sin tarjeta de crédito!</p>
-    <div class="menu-btn">
-        <i class="fas fa-bars"></i>
-    </div>
-        <nav>
-            <ul>
-                <li><a href="#">Ofertas</a></li>
-                <li><a href="#">Tiendas Oficiales</a></li>
-                <li><a href="#">Vender</a></li>
-                <li><a href="#">Ayuda</a></li>
-            </ul>
-            <ul>
-                <li><a href="register">Creá tu cuenta <i class="far fa-id-card"></i></a></li>
-                <li><a href="login">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
-                <li><a href="#">Mis compras <i class="fas fa-shopping-bag"></i></a></li>
-            </ul>
-        </nav>
-    </header>
+        <div class="header-top">
+    <img class="logo" src="/images/logo-mercado-liebre.svg" alt="Logo Mercado Liebre">
+    <form action="#">
+    <input type="search" name="busqueda" placeholder="Buscar productos, marcas y más">
+</div>
+</form>
+    <p> <i class="fas fa-hand-holding-usd"></i> Comprá en cuotas y sin tarjeta de crédito!</p>
+<div class="menu-btn">
+    <i class="fas fa-bars"></i>
+</div>
+    <nav>
+        <ul>
+            <li><a href="#">Ofertas</a></li>
+            <li><a href="#">Tiendas Oficiales</a></li>
+            <li><a href="#">Vender</a></li>
+            <li><a href="#">Ayuda</a></li>
+        </ul>
+        <ul>
+            <li><a href="register">Creá tu cuenta <i class="far fa-id-card"></i></a></li>
+            <li><a href="login">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
+            <li><a href="#">Mis compras <i class="fas fa-shopping-bag"></i></a></li>
+        </ul>
+    </nav>
+</header>
 
  <main>
     <form action="/" method="POST">
@@ -47,14 +49,18 @@
     <label for="domicilio" class="hidden">Domicilio</label>
     <p><input type="text" name="domicilio" placeholder="Domicilio"></p>
     <h3>Perfil del usuario</h3>
+    <div class="user-profile">
     <input type="radio" name="perfil" value="comprador"> Comprador
     <input type="radio" name="perfil" value="vendedor"> Vendedor
+</div>
     <h3>Intereses</h3>
-    <input type="checkbox" name="intereses" value="electro"> Electro
-    <input type="checkbox" name="intereses" value="moda"> Moda
-    <input type="checkbox" name="intereses" value="hogar"> Hogar
-    <input type="checkbox" name="intereses" value="jugueteria"> Juguetería
-    <input type="checkbox" name="intereses" value="vida-sana"> Vida sana
+    <div class="user-interests">
+    <input type="checkbox" name="intereses" value="electro"> <label>Electro</label>
+    <input type="checkbox" name="intereses" value="moda"> <label>Moda</label>
+    <input type="checkbox" name="intereses" value="hogar"> <label>Hogar</label>
+    <input type="checkbox" name="intereses" value="jugueteria"> <label>Juguetería</label>
+    <input type="checkbox" name="intereses" value="vida-sana"> <label>Vida sana</label>
+</div>
     <h3>Elegí tu foto de usuario</h3>
     <input type="file" name="foto">
     <label for="password" class="hidden">Ingresa tu contraseña</label>
