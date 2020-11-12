@@ -37,7 +37,7 @@
 </header>
 
  <main>
-    <form action="/" method="POST">
+    <form class="user-info" action="/" method="POST">
     <label for="nombre" class="hidden">Nombre y apellido:</label>
     <p><input type="text" name="nombre" placeholder="Nombre y apellido"></p>
     <label for="usuario" class="hidden">Nombre de usuario:</label>
@@ -55,11 +55,11 @@
 </div>
     <h3>Intereses</h3>
     <div class="user-interests">
-    <input type="checkbox" name="intereses" value="electro"> <label>Electro</label>
-    <input type="checkbox" name="intereses" value="moda"> <label>Moda</label>
-    <input type="checkbox" name="intereses" value="hogar"> <label>Hogar</label>
-    <input type="checkbox" name="intereses" value="jugueteria"> <label>Juguetería</label>
-    <input type="checkbox" name="intereses" value="vida-sana"> <label>Vida sana</label>
+        <label><input type="checkbox" name="intereses" value="electro"> Electro</label>
+        <label><input type="checkbox" name="intereses" value="moda"> Moda</label>
+        <label><input type="checkbox" name="intereses" value="hogar"> Hogar</label>
+        <label><input type="checkbox" name="intereses" value="jugueteria"> Juguetería</label>
+        <label><input type="checkbox" name="intereses" value="vida-sana"> Vida sana</label>
 </div>
     <h3>Elegí tu foto de usuario</h3>
     <input type="file" name="foto">
