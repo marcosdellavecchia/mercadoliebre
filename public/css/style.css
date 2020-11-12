@@ -44,6 +44,8 @@ header p {
 
 .header-top {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .menu-btn {
@@ -92,8 +94,7 @@ main h2 {
 
 article {
     padding: 15px;
-    /* Agrega distancia entre los articulos arriba y abajo (no costados) */
-    margin: 20px 0px;
+    margin: 15px 5px;
 }
 
 article img {
@@ -141,15 +142,32 @@ p {
 }
 
 .ml-azul {
-    color: #03264c;
+    color: #1065be;
+    font-size: 25px;
+    margin: 10px;
 }
 
 footer {
     padding: 20px 5%;
 }
 
+footer p,
+footer h3 {
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 footer article {
     margin: 20px 0px;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hidden {
@@ -199,26 +217,24 @@ form button {
     background-color: #cc1155;
 }
 
-@media (min-width: 768px) {
-    .last-visit,
-    .offer {
-        display: flex;
-    }
-}
-
 /* Media queries */
 
 /* Header */
 
 @media (min-width: 361px) {
-    .logo {
-        width: 150px;
-    }
-
-    .header-top {
+    .last-visit,
+    .offer {
         display: flex;
         justify-content: center;
-        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        width: 160px;
+    }
+
+    article {
+        width: 47%;
     }
 }
 
@@ -227,21 +243,52 @@ form button {
         display: flex;
         align-items: center;
         justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    article {
+        width: 23%;
     }
 
     .search {
         width: 60%;
     }
 
-    header p {
-        flex-grow: 1;
+    .header-top {
+        width: 70%;
     }
 
-    .header-top {
-        flex-grow: 2;
+    header p {
+        width: 30%;
+    }
+
+    nav {
+        display: initial;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    nav ul {
+        display: flex;
+        margin: 0 15px;
+    }
+
+    nav li {
+        margin: 0 10px;
+        font-size: 15px;
     }
 
     .menu-btn {
         display: none;
+    }
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: center;
     }
 }
