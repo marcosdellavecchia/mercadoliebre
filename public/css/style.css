@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* -- Overall styles -- */
 
 * {
     margin: 0;
@@ -10,6 +10,8 @@
 body {
     background-color: #ebebeb;
 }
+
+/* Header */
 
 header {
     background-color: #eac926;
@@ -85,6 +87,8 @@ nav > ul > li > a {
     text-decoration: none;
     color: black;
 }
+
+/* Main */
 
 main {
     width: 90%;
@@ -178,6 +182,8 @@ article:hover .ml-verde {
     margin: 10px;
 }
 
+/* Footer */
+
 footer {
     padding: 20px 0%;
 }
@@ -217,7 +223,7 @@ footer article {
     top: -18px;
 }
 
-/* Login y Register */
+/* Login and Register */
 
 form input,
 form button {
@@ -265,7 +271,9 @@ form button {
     background-color: #cc1155;
 }
 
-/* Media queries */
+/* -- Media queries -- */
+
+/* Small screens */
 
 @media (min-width: 361px) {
     .last-visit,
@@ -284,6 +292,8 @@ form button {
     }
 }
 
+/* Medium - Large screens */
+
 @media (min-width: 768px) {
     .user-info,
     .user-login {
@@ -297,10 +307,6 @@ form button {
         align-items: center;
         justify-content: space-around;
         flex-wrap: wrap;
-    }
-
-    article {
-        width: 23%;
     }
 
     .search {
@@ -336,6 +342,10 @@ form button {
         display: none;
     }
 
+    article {
+        width: 23%;
+    }
+
     .footer-content {
         flex-direction: row;
         justify-content: center;
@@ -346,8 +356,11 @@ form button {
     }
 }
 
+/* Big screens */
+
 @media (min-width: 1440px) {
     header,
+    main,
     .footer-content {
         padding: 0 10%;
     }
