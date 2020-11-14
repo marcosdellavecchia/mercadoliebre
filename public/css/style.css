@@ -284,6 +284,13 @@ form button {
     }
 }
 
+@media (min-width: 768px) {
+    .user-info,
+    .user-login {
+        padding: 0 25%;
+    }
+}
+
 @media (min-width: 769px) {
     header {
         display: flex;
@@ -339,9 +346,9 @@ form button {
     }
 }
 
-@media (min-width: 768px) {
-    .user-info,
-    .user-login {
-        padding: 0 25%;
+@media (min-width: 1440px) {
+    header,
+    .footer-content {
+        padding: 0 10%;
     }
 }
