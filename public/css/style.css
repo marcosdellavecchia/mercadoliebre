@@ -33,8 +33,16 @@ header p {
 }
 
 .search {
+    display: flex;
+    align-items: center;
     width: 50%;
     margin-right: 3%;
+}
+
+.fa-search {
+    color: gray;
+    position: relative;
+    right: 30px;
 }
 
 .banner img {
@@ -179,7 +187,7 @@ article:hover .ml-verde {
 }
 
 footer {
-    padding: 20px 5%;
+    padding: 20px 0%;
 }
 
 footer p,
