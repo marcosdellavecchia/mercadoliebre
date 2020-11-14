@@ -162,6 +162,16 @@ p {
     padding: 5px;
 }
 
+article:hover .ml-verde {
+    transform: rotate(360deg);
+    transition: transform 2s;
+}
+
+.ml-verde:hover {
+    transform: rotate(360deg);
+    transition: transform 2s;
+}
+
 .ml-azul {
     color: #1065be;
     font-size: 25px;
