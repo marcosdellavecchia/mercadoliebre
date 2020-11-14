@@ -1,3 +1,5 @@
+/* Estilos generales */
+
 * {
     margin: 0;
     padding: 0;
@@ -5,18 +7,8 @@
     font-family: "Roboto", sans-serif;
 }
 
-/* Home y estilos generales */
-
 body {
     background-color: #ebebeb;
-}
-
-.align-right {
-    display: flex;
-    justify-content: flex-end;
-    position: relative;
-    right: 20px;
-    top: -18px;
 }
 
 header {
@@ -217,6 +209,14 @@ footer article {
     display: none;
 }
 
+.align-right {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    right: 20px;
+    top: -18px;
+}
+
 /* Login y Register */
 
 form input,
@@ -231,6 +231,11 @@ form button {
 .user-profile {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+}
+
+.user-profile input {
+    width: 10%;
 }
 
 .user-interests {
@@ -261,8 +266,6 @@ form button {
 }
 
 /* Media queries */
-
-/* Header */
 
 @media (min-width: 361px) {
     .last-visit,
@@ -306,10 +309,6 @@ form button {
     }
 
     nav {
-        display: initial;
-    }
-
-    nav {
         display: flex;
         justify-content: space-between;
         width: 100%;
@@ -337,5 +336,12 @@ form button {
 
     footer article {
         width: 33%;
+    }
+}
+
+@media (min-width: 768px) {
+    .user-info,
+    .user-login {
+        padding: 0 25%;
     }
 }
