@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+       <%- include('partials/head-base.ejs', {title: "Bienvenidx a MercadoLiebre"}) %> 
+    </head>
+
+    <body>
+        <header><%- include('partials/header.ejs') %></header>
+
+        <section class="banner">
+            <img
+                src="/images/img-home-banner.jpg"
+                alt="Banner Mercado Liebre"
+            />
+        </section>
+
+        <main>
+            <h2 class="title">Basado en tu última visita</h2>
+            <section class="last-visit">
+
+                <%- include('partials/product.ejs') %>
+                <%- include('partials/product.ejs') %>
+                <%- include('partials/product.ejs') %>
+                <%- include('partials/product.ejs') %>
+
+            <h2 class="title">Ofertas</h2>
+            <section class="offer">
+                
+                <%- include('partials/product.ejs') %>
+                <%- include('partials/product.ejs') %>
+                <%- include('partials/product.ejs') %>
+                <%- include('partials/product.ejs') %>
+
+            </section>
+        </main>
+
+        <footer><%- include("partials/footer.ejs") %></footer>
+    </body>
+</html>

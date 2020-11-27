@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('partials/head-base.ejs', {title: "Ingresa a tu cuenta"}) %>
+    </head>
+
+    <body>
+        <header><%- include('partials/header.ejs') %></header>
+
+        <main>
+            <h2 class="title">Iniciar sesion</h2>
+            <form class="user-login" action="/" method="POST">
+                <label for="nombre" class="hidden">Ingresa tu nombre</label>
+                <p>
+                    <input
+                        type="text"
+                        name="nombre"
+                        placeholder="Nombre de usuario"
+                        required
+                    />
+                </p>
+                <label for="password" class="hidden"
+                    >Ingresa tu contraseña</label
+                >
+                <p>
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Contraseña"
+                        required
+                    />
+                </p>
+                <button class="submit" type="submit">Enviar</button>
+            </form>
+        </main>
+
+        <footer><%- include("partials/footer.ejs") %></footer>
+    </body>
+</html>
