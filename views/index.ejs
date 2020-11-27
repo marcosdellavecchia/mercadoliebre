@@ -18,18 +18,16 @@
             <h2 class="title">Basado en tu última visita</h2>
             <section class="last-visit">
 
-                <%- include('partials/product.ejs') %>
-                <%- include('partials/product.ejs') %>
-                <%- include('partials/product.ejs') %>
-                <%- include('partials/product.ejs') %>
+                <% for (let i = 0; i < products.length; i++) {%>
+                <%- include("partials/product", {product:products[i]}) %>
+                <% } %>
 
             <h2 class="title">Ofertas</h2>
             <section class="offer">
                 
-                <%- include('partials/product.ejs') %>
-                <%- include('partials/product.ejs') %>
-                <%- include('partials/product.ejs') %>
-                <%- include('partials/product.ejs') %>
+                <% for (let i = 0; i < products.length; i++) {%>
+                    <%- include("partials/product", {product:products[i]}) %>
+                    <% } %>
 
             </section>
         </main>

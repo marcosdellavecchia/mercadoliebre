@@ -1,13 +1,11 @@
 <article class="bg-white">
-    <img src="/images/img-cafetera-moulinex.jpg" alt="Cafetera Moulinex" />
+    <img src="/images/products/<%- product.image %>" alt="Cafetera Moulinex" />
     <div class="product-info">
         <div class="align-right">
             <i class="fas fa-truck ml-verde"></i>
         </div>
-        <p class="price">$6.770</p>
-        <p class="discount">40% Off</p>
-        <h3 class="description">
-            Cafetera Moulinex Dolce Gusto Lorem Ipsum, dolor sit amet.
-        </h3>
+        <p class="price">$<%- product.price %></p>
+        <p class="discount"><%- product.discount %>% Off</p>
+        <h3 class="description"><%- product.name %></h3>
     </div>
 </article>
