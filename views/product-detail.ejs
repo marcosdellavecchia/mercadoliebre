@@ -24,18 +24,19 @@
                 <div class="buy-info">
                     <h2 class="title-product"><%= product.name%></h2>
                     <p class="discount">
-                        <strike>$<%= product.price %></strike> <%=
+                        <strike>$<%= toThousand(product.price) %></strike> <%=
                         product.discount %>% OFF
                     </p>
                     <p class="price-product">
-                        $<%= product.price * (1 - (product.discount/100)) %>
+                        $<%= toThousand(product.price * (1 -
+                        (product.discount/100))) %>
                     </p>
                     <p class="conditions-product">
-                        <i class="fas fa-credit-card"></i> Pagá en 12 cuotas sin
-                        interés
+                        <i class="fas fa-credit-card green"></i> Pagá en 12
+                        cuotas sin interés
                     </p>
                     <p class="conditions-product">
-                        <i class="fas fa-store"></i>
+                        <i class="fas fa-store green"></i>
 
                         Retiro gratis en locales del vendedor
                     </p>

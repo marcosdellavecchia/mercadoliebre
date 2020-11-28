@@ -13,11 +13,17 @@ const productController = {
     detail: (req, res) => {
         const products = getProducts();
         const id = req.params.id;
-        const category = req.params.category;
+
+        const toThousand = (n) =>
+            n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
         const selectProduct = products.find((product) => {
             return id == product.id;
         });
-        res.render("product-detail", { product: selectProduct });
+        res.render("product-detail", {
+            product: selectProduct,
+            toThousand: toThousand,
+        });
     },
 };
 
