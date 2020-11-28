@@ -1,0 +1,65 @@
+.description-product {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10% 0px;
+}
+
+.title-product {
+    font-size: 20px;
+    text-align: left;
+    font-weight: 500;
+}
+
+.price-product {
+    font-size: 30px;
+    padding: 3% 0px;
+}
+
+.conditions-product {
+    padding: 3% 0px;
+    font-size: 13px;
+    color: gray;
+}
+
+.bg-white-product {
+    background-color: white;
+}
+
+.fa-store,
+.fa-credit-card {
+    color: #39b54a;
+}
+
+@media (min-width: 768px) {
+    .bg-white-product img {
+        width: 90%;
+        margin: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    article.bg-white-product {
+        display: flex;
+    }
+    .img-description {
+        width: 60%;
+        border-right: 1px solid #ebebeb;
+    }
+    .buy-info {
+        width: 40%;
+        padding-left: 1%;
+    }
+    form {
+        width: 90%;
+        margin: auto;
+    }
+    .title-product {
+        font-size: 26px;
+    }
+    .price-product {
+        font-size: 36px;
+    }
+    .conditions-product {
+        font-size: 15px;
+    }
+}

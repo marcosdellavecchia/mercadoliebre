@@ -19,15 +19,17 @@
             <section class="last-visit">
 
                 <% for (let i = 0; i < products.length; i++) {%>
+                    <% if (products[i].category == 'visited') { %>
                 <%- include("partials/product", {product:products[i]}) %>
-                <% } %>
+                <% } } %>
 
             <h2 class="title">Ofertas</h2>
             <section class="offer">
                 
                 <% for (let i = 0; i < products.length; i++) {%>
+                    <% if (products[i].category == 'in-sale') { %>
                     <%- include("partials/product", {product:products[i]}) %>
-                    <% } %>
+                    <% } } %>
 
             </section>
         </main>

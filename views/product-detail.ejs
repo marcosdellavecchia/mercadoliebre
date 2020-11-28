@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('partials/head-base.ejs', {title: product.name}) %>
+        <link rel="stylesheet" href="/css/product-detail.css" />
+    </head>
+
+    <body>
+        <header><%- include('partials/header.ejs') %></header>
+
+        <main>
+            <h2 class="title" style="text-align: left; font-size: 22px">
+                <%= product.name%>
+            </h2>
+
+            <article class="bg-white-product">
+                <div class="img-description">
+                    <img
+                        src="/images/products/<%= product.image%>"
+                        alt="Apple iPhone 11 Pro"
+                    />
+                    <p class="description-product"><%= product.description%></p>
+                </div>
+                <div class="buy-info">
+                    <h2 class="title-product"><%= product.name%></h2>
+                    <p class="discount">
+                        <strike>$<%= product.price %></strike> <%=
+                        product.discount %>% OFF
+                    </p>
+                    <p class="price-product">
+                        $<%= product.price * (1 - (product.discount/100)) %>
+                    </p>
+                    <p class="conditions-product">
+                        <i class="fas fa-credit-card"></i> Pagá en 12 cuotas sin
+                        interés
+                    </p>
+                    <p class="conditions-product">
+                        <i class="fas fa-store"></i>
+
+                        Retiro gratis en locales del vendedor
+                    </p>
+                    <form action="">
+                        <button class="submit" type="submit">Enviar</button>
+                    </form>
+                </div>
+            </article>
+        </main>
+
+        <footer><%- include("partials/footer.ejs") %></footer>
+    </body>
+</html>

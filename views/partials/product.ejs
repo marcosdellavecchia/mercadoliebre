@@ -1,5 +1,10 @@
 <article class="bg-white">
-    <img src="/images/products/<%- product.image %>" alt="Cafetera Moulinex" />
+    <a href="/product/<%= product.category %>/<%= product.id %>/detail">
+        <img
+            src="/images/products/<%- product.image %>"
+            alt="Cafetera Moulinex"
+        />
+    </a>
     <div class="product-info">
         <div class="align-right">
             <i class="fas fa-truck ml-verde"></i>

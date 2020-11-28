@@ -288,7 +288,7 @@ form button {
         width: 160px;
     }
 
-    article {
+    article.bg-white {
         width: 47%;
     }
 }
@@ -344,7 +344,7 @@ form button {
         display: none;
     }
 
-    article {
+    article.bg-white {
         width: 23%;
     }
 
