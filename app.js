@@ -19,7 +19,7 @@ app.listen(3000, () => {
 app.use("/", mainRoutes);
 app.use("/register", registerRoutes);
 app.use("/login", loginRoutes);
-app.use("/product", productRoutes);
+app.use("/products", productRoutes);
 
 app.get("*", (req, res) => {
     res.send("Error 404 - No encontramos esta página :/");
