@@ -23,9 +23,10 @@
                 </div>
                 <div class="buy-info">
                     <h2 class="title-product"><%= product.name%></h2>
+                    <% if (product.discount > 0) { %>
                     <p class="discount">
                         <strike>$<%= toThousand(product.price) %></strike> <%=
-                        product.discount %>% OFF
+                        product.discount %>% OFF <% } %>
                     </p>
                     <p class="price-product">
                         $<%= toThousand(product.price * (1 -

@@ -185,11 +185,10 @@ article:hover .ml-verde {
 
 /* Footer */
 
-footer {
-    padding: 20px 0%;
+footer p {
+    text-align: center;
+    padding: 0px 0px 5px 5px;
 }
-
-footer p,
 footer h3 {
     text-align: center;
 }

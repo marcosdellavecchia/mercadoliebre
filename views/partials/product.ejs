@@ -10,7 +10,9 @@
             <i class="fas fa-truck ml-verde"></i>
         </div>
         <p class="price">$<%- product.price %></p>
+        <% if (product.discount > 0) { %>
         <p class="discount"><%- product.discount %>% Off</p>
+        <% }%>
         <h3 class="description"><%- product.name %></h3>
     </div>
 </article>
