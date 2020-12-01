@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('partials/head-base.ejs', {title: 'Listado de productos'})
+        %>
+    </head>
+
+    <body>
+        <header><%- include('partials/header.ejs') %></header>
+
+        <main>
+            <h2 class="title">Todos nuestros productos</h2>
+            <section class="all-items">
+            <% for (let i = 0; i < products.length; i++) { %> 
+                <%- include("partials/product", { product: products[i] }) %> 
+                <% } %>
+            </section>
+        </main>
+
+        <footer><%- include("partials/footer.ejs") %></footer>
+    </body>
+</html>

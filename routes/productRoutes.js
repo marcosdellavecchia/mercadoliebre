@@ -5,4 +5,16 @@ const productController = require("../controllers/productController");
 
 router.get("/detail/:id/:category", productController.detail);
 
+router.get("/", productController.index);
+
+// router.post("/???/", productController.create);
+// router.post("/", productController.store);
+
+// router.get("/:id/", productController.detail);
+
+// router.put("/:id/???", productController.edit);
+// router.put("/:id", productController.update);
+
+// router.delete("/:id", productController.destroy);
+
 module.exports = router;

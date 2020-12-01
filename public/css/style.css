@@ -277,7 +277,8 @@ form button {
 
 @media (min-width: 361px) {
     .last-visit,
-    .offer {
+    .offer,
+    .all-items {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
