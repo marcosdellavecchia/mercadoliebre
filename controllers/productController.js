@@ -16,6 +16,10 @@ const toThousand = (n) =>
         .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const productController = {
+    index: (req, res) => {
+        const products = getProducts();
+        res.render("product-list", { products: products });
+    },
     detail: (req, res) => {
         const products = getProducts();
 
@@ -26,10 +30,6 @@ const productController = {
             product: selectProduct,
             toThousand: toThousand,
         });
-    },
-    index: (req, res) => {
-        const products = getProducts();
-        res.render("product-list", { products: products });
     },
     create: (req, res) => {
         res.render("product-create");
