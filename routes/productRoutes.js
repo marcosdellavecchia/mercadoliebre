@@ -3,15 +3,17 @@ const router = express.Router();
 
 const productController = require("../controllers/productController");
 
-router.get("/detail/:id/:category?", productController.detail);
-
 router.get("/", productController.index);
 
-router.get("/create", productController.create);
+router.get("/create", productController.showCreate);
+
+router.get("/edit/:id", productController.showEdit);
+
+router.get("/detail/:id/:category?", productController.detail);
+
+router.post("/", productController.create);
 
 router.post("/", productController.store);
-
-router.put("/edit/:id", productController.edit);
 
 router.put("/:id", productController.update);
 

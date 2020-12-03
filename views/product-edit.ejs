@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <%- include('partials/head-base.ejs', {title: product.name}) %>
+        <%- include('partials/head-base.ejs', {title: 'Editando ' +
+        product.name}) %>
         <link rel="stylesheet" href="/css/product-detail.css" />
     </head>
 
@@ -10,42 +11,56 @@
 
         <main>
             <h2 class="title" style="text-align: left; font-size: 22px">
-                <%= product.name%>
+                Estas editando <%= product.name %>
             </h2>
+            <form action="/products/ <% product.id %>?_method=PUT">
+                <article class="bg-white-product">
+                    <div class="img-description">
+                        <img
+                            src="/images/products/<%= product.image%>"
+                            alt="Apple iPhone 11 Pro"
+                        />
 
-            <article class="bg-white-product">
-                <div class="img-description">
-                    <img
-                        src="/images/products/<%= product.image%>"
-                        alt="Apple iPhone 11 Pro"
-                    />
-                    <p class="description-product"><%= product.description%></p>
-                </div>
-                <div class="buy-info">
-                    <h2 class="title-product"><%= product.name%></h2>
-                    <% if (product.discount > 0) { %>
-                    <p class="discount">
-                        <strike>$<%= toThousand(product.price) %></strike> <%=
-                        product.discount %>% OFF <% } %>
-                    </p>
-                    <p class="price-product">
-                        $<%= toThousand(product.price * (1 -
-                        (product.discount/100))) %>
-                    </p>
-                    <p class="conditions-product">
-                        <i class="fas fa-credit-card green"></i> Pagá en 12
-                        cuotas sin interés
-                    </p>
-                    <p class="conditions-product">
-                        <i class="fas fa-store green"></i>
+                        <input
+                            type="text"
+                            name="description"
+                            value="<%= product.description %>"
+                        />
+                    </div>
+                    <div class="buy-info">
+                        <input
+                            type="text"
+                            name="name"
+                            value="<%= product.name %>"
+                        />
 
-                        Retiro gratis en locales del vendedor
-                    </p>
-                    <form action="">
-                        <button class="submit" type="submit">Enviar</button>
-                    </form>
-                </div>
-            </article>
+                        <input
+                            type="text"
+                            name="discount"
+                            value="<%= product.discount %>"
+                        />
+
+                        <input
+                            type="text"
+                            name="price"
+                            value="<%= product.price %>"
+                        />
+
+                        <p class="conditions-product">
+                            <i class="fas fa-credit-card green"></i> Pagá en 12
+                            cuotas sin interés
+                        </p>
+                        <p class="conditions-product">
+                            <i class="fas fa-store green"></i>
+
+                            Retiro gratis en locales del vendedor
+                        </p>
+                        <form action="">
+                            <button class="submit" type="submit">Enviar</button>
+                        </form>
+                    </div>
+                </article>
+            </form>
         </main>
 
         <footer><%- include("partials/footer.ejs") %></footer>

@@ -1,11 +1,16 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const methodOverride = require("method-override");
 
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
 
 app.use(express.static("public"));
+
+app.use(express.urlencoded({ extended: true }));
+
+app.use(methodOverride("_method"));
 
 const mainRoutes = require("./routes/mainRoutes");
 const loginRoutes = require("./routes/loginRoutes");

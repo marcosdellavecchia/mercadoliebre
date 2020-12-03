@@ -31,18 +31,33 @@ const productController = {
             toThousand: toThousand,
         });
     },
-    create: (req, res) => {
+    showCreate: (req, res) => {
         res.render("product-create");
+    },
+    create: (req, res) => {
+        const message = "Product Created: " + JSON.stringify(req.body);
+        res.send(message);
     },
     store: (req, res) => {
         // Ruta de almacenamiento de productos
     },
+    showEdit: (req, res) => {
+        const products = getProducts();
+        const requiredProducts = products.find((product) => {
+            return product.id == req.params.id;
+        });
+
+        if (requiredProducts == null) {
+            return res.send("Error 404 - Producto no encontrado");
+        }
+        res.render("product-edit", {
+            product: requiredProducts,
+            toThousand: toThousand,
+        });
+    },
     edit: (req, res) => {
-        res.render("product-edit"),
-            {
-                product: selectProduct,
-                toThousand: toThousand,
-            };
+        const message = "Product Edited: " + JSON.stringify(req.body);
+        res.send(message);
     },
     update: (req, res) => {
         // Ruta de recepcion de formulario update
