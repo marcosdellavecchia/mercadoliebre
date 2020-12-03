@@ -9,13 +9,12 @@ router.get("/", productController.index);
 
 router.get("/create", productController.create);
 
-// router.post("/", productController.store);
+router.post("/", productController.store);
 
-// router.get("/:id/", productController.detail);
+router.put("/edit/:id", productController.edit);
 
-// router.put("/:id/???", productController.edit);
-// router.put("/:id", productController.update);
+router.put("/:id", productController.update);
 
-// router.delete("/:id", productController.destroy);
+router.delete("/:id", productController.destroy);
 
 module.exports = router;

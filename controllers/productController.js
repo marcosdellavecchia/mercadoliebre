@@ -34,6 +34,22 @@ const productController = {
     create: (req, res) => {
         res.render("product-create");
     },
+    store: (req, res) => {
+        // Ruta de almacenamiento de productos
+    },
+    edit: (req, res) => {
+        res.render("product-edit"),
+            {
+                product: selectProduct,
+                toThousand: toThousand,
+            };
+    },
+    update: (req, res) => {
+        // Ruta de recepcion de formulario update
+    },
+    destroy: (req, res) => {
+        // Ruta de eliminacion de producto
+    },
 };
 
 module.exports = productController;

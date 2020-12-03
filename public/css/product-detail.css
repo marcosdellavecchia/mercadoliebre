@@ -33,6 +33,14 @@ article.bg-white-product {
     color: #39b54a;
 }
 
+.edit-delete {
+    display: flex;
+}
+
+.edit-delete button {
+    margin: 0px 5px;
+}
+
 @media (min-width: 768px) {
     .bg-white-product img {
         width: 90%;
