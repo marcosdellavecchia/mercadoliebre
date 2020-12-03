@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('partials/head-base.ejs', {title: 'Crear producto'}) %>
+        <link rel="stylesheet" href="/css/product-detail.css" />
+    </head>
+
+    <body>
+        <header><%- include('partials/header.ejs') %></header>
+
+        <main>
+            <h2 class="title" style="text-align: left; font-size: 22px">
+                <%= product.name%>
+            </h2>
+
+            <form action="">
+                <input type="text" />Nombre de producto
+                <input type="text" />Descripción <input type="number" />Precio
+                del producto <input type="file" />Imagen deel producto
+            </form>
+        </main>
+
+        <footer><%- include("partials/footer.ejs") %></footer>
+    </body>
+</html>

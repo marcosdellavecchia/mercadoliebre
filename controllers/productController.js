@@ -31,6 +31,9 @@ const productController = {
         const products = getProducts();
         res.render("product-list", { products: products });
     },
+    create: (req, res) => {
+        res.render("product-create");
+    },
 };
 
 module.exports = productController;
