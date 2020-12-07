@@ -84,15 +84,70 @@ const productController = {
             toThousand: toThousand,
         });
     },
-    edit: (req, res) => {
-        const message = "Product Edited: " + JSON.stringify(req.body);
+    update: (req, res) => {
+        //1. Lee lo que ya hay en la db y lo descomprime en un array
+        const database = getProducts();
+
+        //2. Guarda el producto requerido por ID en una variable
+        const requiredProduct = database.find((product) => {
+            return product.id == req.params.id;
+        });
+
+        //3. Crea un producto editado con las modificaciones realizadas conservando el ID original
+        const editedProduct = {
+            id: requiredProduct.id,
+            name: req.body.name,
+            description: req.body.description,
+            price: Number(req.body.price),
+            discount: Number(req.body.discount),
+            image: req.body.image,
+        };
+
+        //4. Inserta el producto editado en el indice donde se encontraba el producto requerido
+        database.splice(database.indexOf(requiredProduct), 1, editedProduct);
+
+        //5. Vuelve a pasar a string la base de datos para escribir el contenido nuevo.
+        const databaseJSON = JSON.stringify(database);
+
+        //6. Escribe el nuevo contenido en la base de datos sobrescribiendo lo anterior
+        fs.writeFileSync(
+            __dirname + "/../data/productsDataBase.json",
+            databaseJSON
+        );
+
+        const message = "Product Edited: " + JSON.stringify(editedProduct);
         res.send(message);
     },
-    update: (req, res) => {
-        // Ruta de recepcion del formulario de edicion
+    showDelete: (req, res) => {
+        const products = getProducts();
+        const requiredProducts = products.find((product) => {
+            return product.id == req.params.id;
+        });
+
+        if (requiredProducts == null) {
+            return res.send("Error 404 - Producto no encontrado");
+        }
+
+        res.render("product-delete", {
+            product: requiredProducts,
+        });
     },
-    destroy: (req, res) => {
-        // Ruta de eliminacion de producto
+    delete: (req, res) => {
+        const database = getProducts();
+        const requiredProduct = database.find((product) => {
+            return product.id == req.params.id;
+        });
+
+        database.splice(database.indexOf(requiredProduct), 1);
+
+        const databaseJSON = JSON.stringify(database);
+
+        fs.writeFileSync(
+            __dirname + "/../data/productsDataBase.json",
+            databaseJSON
+        );
+
+        res.send("Product deleted: " + JSON.stringify(requiredProduct));
     },
 };
 

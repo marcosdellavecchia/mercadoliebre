@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('partials/head-base.ejs', {title: 'Borrando ' +
+        product.name}) %>
+        <link rel="stylesheet" href="/css/product-detail.css" />
+    </head>
+
+    <body>
+        <header><%- include('partials/header.ejs') %></header>
+
+        <main>
+            <h2 class="title" style="text-align: left; font-size: 22px">
+                ¿Estás seguro de que querés borrar <%= product.name %>?
+            </h2>
+            <form
+                action="/products/ <%= product.id %>?_method=DELETE"
+                method="POST"
+            >
+                <button class="submit" type="submit">Eliminar producto</button>
+            </form>
+        </main>
+
+        <footer><%- include("partials/footer.ejs") %></footer>
+    </body>
+</html>
