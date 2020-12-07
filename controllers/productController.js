@@ -35,21 +35,30 @@ const productController = {
         res.render("product-create");
     },
     create: (req, res) => {
-        const newProduct = {
-            name: req.body.name,
-            description: req.body.description,
-            price: req.body.price,
-            discount: req.body.discount,
-            image: req.body.image,
-        };
-
         //1. Lee lo que ya hay en la db y lo descomprime en un array
         const database = getProducts();
-        //2. Agrega al array una nueva posicion con los datos de newProduct
+
+        //2. Itera el JSON para agregar un nuevo ID a cada producto. Agrega los datos que recibe del formulario a newProduct.
+        let newProduct = null;
+
+        for (let i = 0; i < database.length; i++) {
+            newProduct = {
+                id: database[i].id + 1,
+                name: req.body.name,
+                description: req.body.description,
+                price: Number(req.body.price),
+                discount: Number(req.body.discount),
+                image: req.body.image,
+            };
+        }
+
+        //3. Agrega newProduct al final del array database
         database.push(newProduct);
-        //3. Vuelve a pasar a string la base de datos para escribir el contenido nuevo.
+
+        //4. Vuelve a pasar a string la base de datos para escribir el contenido nuevo.
         const databaseJSON = JSON.stringify(database);
-        //4. Escribe el nuevo contenido en la base de datos sobrescribiendo lo anterior
+
+        //5. Escribe el nuevo contenido en la base de datos sobrescribiendo lo anterior
         fs.writeFileSync(
             __dirname + "/../data/productsDataBase.json",
             databaseJSON
