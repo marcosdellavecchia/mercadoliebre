@@ -17,13 +17,13 @@ const toThousand = (n) =>
 
 const productController = {
     index: (req, res) => {
-        const products = getProducts();
-        res.render("product-list", { products: products });
+        const database = getProducts();
+        res.render("product-list", { products: database });
     },
     detail: (req, res) => {
-        const products = getProducts();
+        const database = getProducts();
 
-        const selectProduct = products.find((product) => {
+        const selectProduct = database.find((product) => {
             return req.params.id == product.id;
         });
         res.render("product-detail", {
@@ -71,16 +71,16 @@ const productController = {
         // Ruta de almacenamiento de productos
     },
     showEdit: (req, res) => {
-        const products = getProducts();
-        const requiredProducts = products.find((product) => {
+        const database = getProducts();
+        const selectedProduct = database.find((product) => {
             return product.id == req.params.id;
         });
 
-        if (requiredProducts == null) {
+        if (selectedProduct == null) {
             return res.send("Error 404 - Producto no encontrado");
         }
         res.render("product-edit", {
-            product: requiredProducts,
+            product: selectedProduct,
             toThousand: toThousand,
         });
     },
@@ -89,22 +89,23 @@ const productController = {
         const database = getProducts();
 
         //2. Guarda el producto requerido por ID en una variable
-        const requiredProduct = database.find((product) => {
+        const selectedProduct = database.find((product) => {
             return product.id == req.params.id;
         });
 
         //3. Crea un producto editado con las modificaciones realizadas conservando el ID original
         const editedProduct = {
-            id: requiredProduct.id,
+            id: selectedProduct.id,
             name: req.body.name,
             description: req.body.description,
             price: Number(req.body.price),
             discount: Number(req.body.discount),
-            image: req.body.image,
+            image: selectedProduct.image,
+            category: selectedProduct.category,
         };
 
         //4. Inserta el producto editado en el indice donde se encontraba el producto requerido
-        database.splice(database.indexOf(requiredProduct), 1, editedProduct);
+        database.splice(database.indexOf(selectedProduct), 1, editedProduct);
 
         //5. Vuelve a pasar a string la base de datos para escribir el contenido nuevo.
         const databaseJSON = JSON.stringify(database);
@@ -119,26 +120,26 @@ const productController = {
         res.send(message);
     },
     showDelete: (req, res) => {
-        const products = getProducts();
-        const requiredProducts = products.find((product) => {
+        const database = getProducts();
+        const selectedProduct = database.find((product) => {
             return product.id == req.params.id;
         });
 
-        if (requiredProducts == null) {
+        if (selectedProduct == null) {
             return res.send("Error 404 - Producto no encontrado");
         }
 
         res.render("product-delete", {
-            product: requiredProducts,
+            product: selectedProduct,
         });
     },
     delete: (req, res) => {
         const database = getProducts();
-        const requiredProduct = database.find((product) => {
+        const selectedProduct = database.find((product) => {
             return product.id == req.params.id;
         });
 
-        database.splice(database.indexOf(requiredProduct), 1);
+        database.splice(database.indexOf(selectedProduct), 1);
 
         const databaseJSON = JSON.stringify(database);
 
@@ -147,7 +148,7 @@ const productController = {
             databaseJSON
         );
 
-        res.send("Product deleted: " + JSON.stringify(requiredProduct));
+        res.send("Product deleted: " + JSON.stringify(selectedProduct));
     },
 };
 
