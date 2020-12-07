@@ -20,27 +20,34 @@
                             src="/images/products/<%= product.image%>"
                             alt="Apple iPhone 11 Pro"
                         />
-
-                        <input
-                            type="text"
-                            name="description"
-                            value="<%= product.description %>"
-                        />
+                        <label for="description">
+                            Descripción del producto
+                            <input
+                                class="edit-input"
+                                type="text"
+                                name="description"
+                                value="<%= product.description %>"
+                            />
+                        </label>
                     </div>
                     <div class="buy-info">
+                        <label for="name">Nombre del producto</label>
                         <input
+                            class="edit-input"
                             type="text"
                             name="name"
                             value="<%= product.name %>"
                         />
-
+                        <label for="discount">Porcentaje de descuento</label>
                         <input
+                            class="edit-input"
                             type="text"
                             name="discount"
                             value="<%= product.discount %>"
                         />
-
+                        <label for="price">Precio</label>
                         <input
+                            class="edit-input"
                             type="text"
                             name="price"
                             value="<%= product.price %>"

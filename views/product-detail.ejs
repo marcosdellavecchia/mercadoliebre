@@ -44,10 +44,10 @@
                     <form action="">
                         <button class="submit" type="submit">Comprar</button>
                     </form>
-                    <form class="edit-delete" action="">
-                        <button class="submit" type="submit">Editar</button>
-                        <button class="submit" type="submit">Borrar</button>
-                    </form>
+                    <div class="edit-delete" action="">
+                        <a href="/products/edit/<%= product.id %>">Editar</a>
+                        <a href="/products/edit/<%= product.id %>">Borrar </a>
+                    </div>
                 </div>
             </article>
         </main>

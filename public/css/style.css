@@ -232,6 +232,7 @@ form button {
     margin: 20px 0px;
     border-radius: 5px;
     border: 0px;
+    cursor: pointer;
 }
 
 .user-profile {

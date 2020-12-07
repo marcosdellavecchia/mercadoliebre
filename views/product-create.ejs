@@ -12,15 +12,18 @@
             <h2 class="title">Crear producto</h2>
 
             <form action="/products" method="post">
-                <label for="product-name">Nombre de producto</label>
-                <input type="text" name="product-name" />
-                <label for="product-description">Descripción</label>
-                <input type="text" name="product-description" />
-                <label for="product-price">Precio del producto</label>
-                <input type="number" name="product-price" />
-                <label for="product-img">Foto de producto</label>
-                <input type="file" name="product-img" />Imagen del producto
-                <button type="submit" class="submit">Enviar</button>
+                <label for="name">Nombre de producto</label>
+                <input type="text" name="name" />
+                <label for="description">Descripción</label>
+                <input type="text" name="description" />
+                <label for="price">Precio del producto</label>
+                <input type="text" name="price" />
+                <label for="discount">Descuento del producto</label>
+                <input type="text" name="discount" />
+                <label for="image">Foto de producto</label>
+                <input type="file" name="image" />Imagen del producto
+                <label for="category" name="category"></label>
+                <button type="submit" class="submit">Agregar producto</button>
             </form>
         </main>
 

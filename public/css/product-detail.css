@@ -37,8 +37,13 @@ article.bg-white-product {
     display: flex;
 }
 
-.edit-delete button {
+.edit-delete a {
     margin: 0px 5px;
+}
+
+.edit-input {
+    cursor: auto;
+    border: 1px solid black;
 }
 
 @media (min-width: 768px) {
