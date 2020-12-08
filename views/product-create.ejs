@@ -11,7 +11,11 @@
         <main>
             <h2 class="title">Crear producto</h2>
 
-            <form action="/products" method="post">
+            <form
+                action="/products"
+                method="POST"
+                enctype="multipart/form-data"
+            >
                 <label for="name">Nombre de producto</label>
                 <input type="text" name="name" />
                 <label for="description">Descripción</label>
