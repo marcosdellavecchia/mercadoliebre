@@ -64,8 +64,7 @@ const productController = {
             databaseJSON
         );
 
-        const message = "Product Created: " + JSON.stringify(newProduct);
-        res.send(message);
+        res.redirect("/products/detail/" + newProduct.id);
     },
     store: (req, res) => {
         // Ruta de almacenamiento de productos
@@ -116,8 +115,7 @@ const productController = {
             databaseJSON
         );
 
-        const message = "Product Edited: " + JSON.stringify(editedProduct);
-        res.send(message);
+        res.redirect("/products/detail/" + editedProduct.id);
     },
     showDelete: (req, res) => {
         const database = getProducts();
@@ -148,7 +146,7 @@ const productController = {
             databaseJSON
         );
 
-        res.send("Product deleted: " + JSON.stringify(selectedProduct));
+        res.redirect("/products");
     },
 };
 
