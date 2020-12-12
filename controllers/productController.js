@@ -38,25 +38,22 @@ const productController = {
         //1. Lee lo que ya hay en la db y lo descomprime en un array
         const database = getProducts();
 
-        //2. Recorre el JSON para agregar un nuevo ID a cada producto. Agrega los datos que recibe del formulario a newProduct.
-        let newProduct = null;
+        //2. Itera el JSON para agregar un nuevo ID a cada producto. Agrega los datos que recibe del formulario a newProduct.
 
-        for (let i = 0; i < database.length; i++) {
-            newProduct = {
-                id: database[i].id + 1,
-                name: req.body.name,
-                description: req.body.description,
-                price: Number(req.body.price),
-                discount: Number(req.body.discount),
-                image: req.files[0].filename,
-            };
-        }
+        const newProduct = {
+            id: database[database.length - 1].id + 1,
+            name: req.body.name,
+            description: req.body.description,
+            price: Number(req.body.price),
+            discount: Number(req.body.discount),
+            image: req.files[0].filename,
+        };
 
         //3. Agrega newProduct al final del array database
         database.push(newProduct);
 
         //4. Vuelve a pasar a string la base de datos para escribir el contenido nuevo.
-        const databaseJSON = JSON.stringify(database);
+        const databaseJSON = JSON.stringify(database, null, 4);
 
         //5. Escribe el nuevo contenido en la base de datos sobrescribiendo lo anterior
         fs.writeFileSync(
@@ -107,7 +104,7 @@ const productController = {
         database.splice(database.indexOf(selectedProduct), 1, editedProduct);
 
         //5. Vuelve a pasar a string la base de datos para escribir el contenido nuevo.
-        const databaseJSON = JSON.stringify(database);
+        const databaseJSON = JSON.stringify(database, null, 4);
 
         //6. Escribe el nuevo contenido en la base de datos sobrescribiendo lo anterior
         fs.writeFileSync(
@@ -139,7 +136,7 @@ const productController = {
 
         database.splice(database.indexOf(selectedProduct), 1);
 
-        const databaseJSON = JSON.stringify(database);
+        const databaseJSON = JSON.stringify(database, null, 4);
 
         fs.writeFileSync(
             __dirname + "/../data/productsDataBase.json",
