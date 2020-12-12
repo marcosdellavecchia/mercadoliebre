@@ -145,6 +145,12 @@ const productController = {
 
         res.redirect("/products");
     },
+    showSearch: (req, res) => {
+        res.render("product-search");
+    },
+    search: (req, res) => {
+        res.send("Estamos buscando tu producto...");
+    },
 };
 
 module.exports = productController;
