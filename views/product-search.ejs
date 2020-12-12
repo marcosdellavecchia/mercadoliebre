@@ -9,7 +9,10 @@
         <header><%- include('partials/header.ejs') %></header>
 
         <main>
-            <h2 class="title">Busqueda de productos</h2>
+            <h2 class="title">Resultados para <%= keyword%></h2>
+
+            <% for (let i = 0; i < results.length; i++) { %> <%-
+            include("partials/product", { product: results[i] }) %> <% } %>
         </main>
 
         <footer><%- include("partials/footer.ejs") %></footer>

@@ -32,8 +32,6 @@ router.post("/", upload.any(), productController.create);
 
 router.post("/", productController.store);
 
-router.post("/search", productController.search);
-
 router.put("/:id", productController.update);
 
 router.delete("/:id", productController.delete);
