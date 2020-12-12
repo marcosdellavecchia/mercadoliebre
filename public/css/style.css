@@ -112,7 +112,8 @@ article img {
 }
 
 .last-visit article:hover,
-.offer article:hover {
+.offer article:hover,
+.all-items article:hover {
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
@@ -155,7 +156,8 @@ p {
 }
 
 .last-visit article:hover .description,
-.offer article:hover .description {
+.offer article:hover .description,
+.all-items article:hover .description {
     display: block;
 }
 

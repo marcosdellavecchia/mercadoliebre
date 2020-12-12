@@ -38,7 +38,7 @@ const productController = {
         //1. Lee lo que ya hay en la db y lo descomprime en un array
         const database = getProducts();
 
-        //2. Itera el JSON para agregar un nuevo ID a cada producto. Agrega los datos que recibe del formulario a newProduct.
+        //2. Recorre el JSON para agregar un nuevo ID a cada producto. Agrega los datos que recibe del formulario a newProduct.
         let newProduct = null;
 
         for (let i = 0; i < database.length; i++) {
