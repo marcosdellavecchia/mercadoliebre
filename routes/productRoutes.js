@@ -4,7 +4,7 @@ const path = require("path");
 const multer = require("multer");
 const productController = require("../controllers/productController");
 
-var storage = multer.diskStorage({
+const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, __dirname + "/../public/images/products");
     },
@@ -16,7 +16,7 @@ var storage = multer.diskStorage({
     },
 });
 
-var upload = multer({ storage: storage });
+const upload = multer({ storage: storage });
 
 router.get("/", productController.index);
 
