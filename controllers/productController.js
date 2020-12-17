@@ -1,19 +1,6 @@
 const fs = require("fs");
-const path = require("path");
-
-const getProducts = () => {
-    const dbJson = fs.readFileSync(
-        path.resolve(__dirname, "../data/productsDataBase.json"),
-        { encoding: "utf-8" }
-    );
-    return JSON.parse(dbJson);
-};
-
-const toThousand = (n) =>
-    n
-        .toString()
-        .replace(".", ",")
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const getProducts = require("../middlewares/getProductsMiddleware");
+const toThousand = require("../middlewares/toThousandMiddleware");
 
 const productController = {
     index: (req, res) => {
