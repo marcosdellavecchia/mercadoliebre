@@ -4,7 +4,12 @@ const path = require("path");
 const methodOverride = require("method-override");
 
 app.set("view engine", "ejs");
-app.set("views", __dirname + "/views");
+app.set("views", [
+    __dirname + "/views",
+    __dirname + "/views/users",
+    __dirname + "/views/products",
+    __dirname + "/views/partials",
+]);
 
 app.use(express.static("public"));
 
