@@ -3,6 +3,7 @@ const router = express.Router();
 const path = require("path");
 const multer = require("multer");
 const productController = require("../controllers/productController");
+const logDBMiddleware = require("../middlewares/logDBMiddleware");
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -28,12 +29,12 @@ router.get("/delete/:id", productController.showDelete);
 
 router.get("/detail/:id/:category?", productController.detail);
 
-router.post("/", upload.any(), productController.create);
+router.post("/", [upload.any(), logCreateMiddleware], productController.create);
 
 router.post("/", productController.store);
 
-router.put("/:id", productController.update);
+router.put("/:id", logEditMiddleware, productController.update);
 
-router.delete("/:id", productController.delete);
+router.delete("/:id", logDeleteMiddleware, productController.delete);
 
 module.exports = router;

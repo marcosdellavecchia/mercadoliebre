@@ -1,4 +1,4 @@
-const getProducts = require("../middlewares/getProductsMiddleware");
+const getProducts = require("../utils/getProducts");
 
 const mainController = {
     main: (req, res) => {

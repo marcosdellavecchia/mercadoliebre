@@ -1,6 +1,6 @@
 const fs = require("fs");
-const getProducts = require("../middlewares/getProductsMiddleware");
-const toThousand = require("../middlewares/toThousandMiddleware");
+const getProducts = require("../utils/getProducts");
+const toThousand = require("../utils/toThousand");
 
 const productController = {
     index: (req, res) => {

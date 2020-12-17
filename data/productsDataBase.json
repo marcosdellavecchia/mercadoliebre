@@ -142,5 +142,13 @@
         "discount": 0,
         "image": "img-parlante-sony.jpg",
         "category": "visited"
+    },
+    {
+        "id": 17,
+        "name": "Sony Playstation 5",
+        "description": "Este es un producto de prueba lorem ipsum blablabla.",
+        "price": 100000,
+        "discount": 5,
+        "image": "image-1608232133394.png"
     }
 ]
