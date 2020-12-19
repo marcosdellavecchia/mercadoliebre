@@ -3,7 +3,9 @@ const router = express.Router();
 
 const mainController = require("../controllers/mainController");
 
-router.all("/", mainController.main);
+const authenticate = require("../middlewares/authenticateMiddleware");
+
+router.all("/", authenticate, mainController.main);
 
 router.get("/search", mainController.search);
 

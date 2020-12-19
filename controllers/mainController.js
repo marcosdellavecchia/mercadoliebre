@@ -1,10 +1,12 @@
 const getProducts = require("../utils/getProducts");
 
 const mainController = {
-    main: (req, res) => {
+    main: (req, res, next) => {
         const products = getProducts();
-
-        res.render("index", { products: products });
+        res.render("index", {
+            products: products,
+            user: req.loggedUser,
+        });
     },
     search: (req, res) => {
         const database = getProducts();

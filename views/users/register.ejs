@@ -9,34 +9,30 @@
 
         <main>
             <h2 class="title">Crear cuenta</h2>
-            <form class="user-info" action="/" method="POST">
-                <label for="nombre" class="hidden">Nombre y apellido:</label>
+            <form class="user-info" action="/auth/register" method="POST">
+                <label for="name" class="hidden">Nombre y apellido:</label>
                 <p>
                     <input
                         type="text"
-                        name="nombre"
+                        name="name"
                         placeholder="Nombre y apellido"
                     />
                 </p>
-                <label for="usuario" class="hidden">Nombre de usuario:</label>
+                <label for="user" class="hidden">Nombre de usuario:</label>
                 <p>
                     <input
                         type="text"
-                        name="usuario"
+                        name="user"
                         placeholder="Nombre de usuario"
                     />
                 </p>
                 <label for="email" class="hidden">Email:</label>
                 <p><input type="text" name="email" placeholder="Email" /></p>
-                <label for="nacimiento">Fecha de nacimiento</label>
-                <p><input type="date" /></p>
-                <label for="domicilio" class="hidden">Domicilio</label>
+                <label for="birth">Fecha de nacimiento</label>
+                <p><input type="birth" /></p>
+                <label for="address" class="hidden">Domicilio</label>
                 <p>
-                    <input
-                        type="text"
-                        name="domicilio"
-                        placeholder="Domicilio"
-                    />
+                    <input type="text" name="address" placeholder="Domicilio" />
                 </p>
                 <h3>Perfil del usuario</h3>
                 <div class="user-profile">
@@ -96,13 +92,13 @@
                         placeholder="Elegí tu contraseña"
                     />
                 </p>
-                <label for="confirm-password" class="hidden"
+                <label for="passConfirm" class="hidden"
                     >Confirma tu contraseña</label
                 >
                 <p>
                     <input
                         type="confirm-password"
-                        name="password"
+                        name="passConfirm"
                         placeholder="Confirmá tu contraseña"
                     />
                 </p>

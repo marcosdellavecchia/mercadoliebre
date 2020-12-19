@@ -1,0 +1,9 @@
+[
+    {
+        "name": "Juan",
+        "user": "juancito",
+        "email": "juan@dh.net",
+        "password": "password123",
+        "passConfirm": "password123"
+    }
+]
