@@ -9,12 +9,12 @@
 
         <main>
             <h2 class="title">Iniciar sesion</h2>
-            <form class="user-login" action="/login" method="POST">
-                <label for="nombre" class="hidden">Ingresa tu nombre</label>
+            <form class="user-login" action="/auth/login" method="POST">
+                <label for="user" class="hidden">Ingresa tu nombre</label>
                 <p>
                     <input
                         type="text"
-                        name="nombre"
+                        name="user"
                         placeholder="Nombre de usuario"
                         required
                     />
@@ -25,7 +25,7 @@
                 <p>
                     <input
                         type="password"
-                        name="password"
+                        name="pass"
                         placeholder="Contraseña"
                         required
                     />
