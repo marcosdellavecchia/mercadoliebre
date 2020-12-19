@@ -1,9 +1,22 @@
 [
-    {
-        "name": "Juan",
-        "user": "juancito",
-        "email": "juan@dh.net",
-        "password": "password123",
-        "passConfirm": "password123"
-    }
+  {
+    "id": 1,
+    "name": "Marcos Della Vecchia",
+    "user": "marcosdv",
+    "email": "marcosdvecchia@gmail.com",
+    "address": "Calel Falsa 123",
+    "profile": "vendedor",
+    "interests": "electro",
+    "pass": "$2b$12$06gQOG6rdtYSKt0oRmbA5OgyNMx9XjXjWJAiZCX2HfbO7uO0wxoNa"
+  },
+  {
+    "id": 2,
+    "name": "Usuario de prueba",
+    "user": "test",
+    "email": "test@test.com",
+    "address": "Test address",
+    "profile": "comprador",
+    "interests": "vida-sana",
+    "pass": "$2b$12$/yQvdWESb5tuKQND6HKMrexbM7vthV/xrq8XG7XEruAleFyqMHBH2"
+  }
 ]

@@ -1,6 +1,6 @@
 const getUsers = require("../utils/getUsers");
 
-function authenticate(req, res, next) {
+function authenticateMiddleware(req, res, next) {
     const id = req.session.loggedUserId;
 
     if (!id) return next();
@@ -21,4 +21,4 @@ function authenticate(req, res, next) {
     next();
 }
 
-module.exports = authenticate;
+module.exports = authenticateMiddleware;

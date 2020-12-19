@@ -9,7 +9,12 @@
 
         <main>
             <h2 class="title">Crear cuenta</h2>
-            <form class="user-info" action="/auth/register" method="POST">
+            <form
+                class="user-info"
+                action="/auth/register"
+                method="POST"
+                enctype="multipart/form-data"
+            >
                 <label for="name" class="hidden">Nombre y apellido:</label>
                 <p>
                     <input
@@ -29,16 +34,16 @@
                 <label for="email" class="hidden">Email:</label>
                 <p><input type="text" name="email" placeholder="Email" /></p>
                 <label for="birth">Fecha de nacimiento</label>
-                <p><input type="birth" /></p>
+                <p><input type="date" /></p>
                 <label for="address" class="hidden">Domicilio</label>
                 <p>
                     <input type="text" name="address" placeholder="Domicilio" />
                 </p>
                 <h3>Perfil del usuario</h3>
                 <div class="user-profile">
-                    <input type="radio" name="perfil" value="comprador" />
+                    <input type="radio" name="profile" value="comprador" />
                     Comprador
-                    <input type="radio" name="perfil" value="vendedor" />
+                    <input type="radio" name="profile" value="vendedor" />
                     Vendedor
                 </div>
                 <h3>Intereses</h3>
@@ -46,7 +51,7 @@
                     <label
                         ><input
                             type="checkbox"
-                            name="intereses"
+                            name="interests"
                             value="electro"
                         />
                         Electro</label
@@ -58,7 +63,7 @@
                     <label
                         ><input
                             type="checkbox"
-                            name="intereses"
+                            name="interests"
                             value="hogar"
                         />
                         Hogar</label
@@ -66,7 +71,7 @@
                     <label
                         ><input
                             type="checkbox"
-                            name="intereses"
+                            name="interests"
                             value="jugueteria"
                         />
                         Juguetería</label
@@ -74,31 +79,29 @@
                     <label
                         ><input
                             type="checkbox"
-                            name="intereses"
+                            name="interests"
                             value="vida-sana"
                         />
                         Vida sana</label
                     >
                 </div>
                 <h3>Elegí tu foto de usuario</h3>
-                <input type="file" name="foto" />
-                <label for="password" class="hidden"
-                    >Ingresa tu contraseña</label
-                >
+                <input type="file" name="avatar" />
+                <label for="pass" class="hidden">Ingresa tu contraseña</label>
                 <p>
                     <input
                         type="password"
-                        name="password"
+                        name="pass"
                         placeholder="Elegí tu contraseña"
                     />
                 </p>
-                <label for="passConfirm" class="hidden"
+                <label for="pass_confirm" class="hidden"
                     >Confirma tu contraseña</label
                 >
                 <p>
                     <input
-                        type="confirm-password"
-                        name="passConfirm"
+                        type="password"
+                        name="pass_confirm"
                         placeholder="Confirmá tu contraseña"
                     />
                 </p>

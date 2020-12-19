@@ -1,7 +1,7 @@
 const getProducts = require("../utils/getProducts");
 
 const mainController = {
-    main: (req, res, next) => {
+    main: (req, res) => {
         const products = getProducts();
         res.render("index", {
             products: products,

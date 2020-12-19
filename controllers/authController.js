@@ -25,13 +25,14 @@ module.exports = {
         const lastUser = users[lastUserIndex];
         const newId = lastUser ? lastUser.id + 1 : 1;
 
-        delete req.body.pass_confirm;
+        if (req.body.pass_confirm) {
+            delete req.body.pass_confirm;
+        }
 
         const newUser = {
             id: newId,
             ...req.body,
             pass: bcrypt.hashSync(req.body.pass, 12),
-            avatar: req.file.filename,
         };
 
         users.push(newUser);
