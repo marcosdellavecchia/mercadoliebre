@@ -28,18 +28,19 @@
     <ul>
         <li>
             <% if (!user) { %>
-             
+
             <a href="/auth/register"
-                >Creá tu cuenta <i class="far fa-id-card"></i
-            ></a>
+                ><i class="far fa-id-card"></i> Creá tu cuenta</a
+            >
         </li>
         <li>
-            <a href="/auth/login">Ingresá <i class="fas fa-sign-in-alt"></i></a>
+            <a href="/auth/login"><i class="fas fa-sign-in-alt"></i> Ingresá</a>
         </li>
 
         <% } else { %>
         <li class="welcome-message">
-            <i class="fas fa-user"></i> ¡Bienvenido, <%= user ? user.name : "invitado" %>!
+            <i class="fas fa-user"></i> ¡Bienvenido, <%= user ? user.name :
+            "invitado" %>!
         </li>
         <li>
             <a href="#"><i class="fas fa-shopping-bag"></i> Mis compras</a>
