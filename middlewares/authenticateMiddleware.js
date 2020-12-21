@@ -1,5 +1,7 @@
 const getUsers = require("../utils/getUsers");
 
+// Guarda la info del usuario logueado en locals.user
+
 function authenticateMiddleware(req, res, next) {
     const id = req.session.loggedUserId;
 
@@ -16,7 +18,7 @@ function authenticateMiddleware(req, res, next) {
         return next();
     }
 
-    req.loggedUser = loggedUser;
+    res.locals.user = loggedUser;
 
     next();
 }

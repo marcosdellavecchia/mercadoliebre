@@ -32,6 +32,9 @@ app.use("/", mainRoutes);
 app.use("/auth", authRoutes);
 app.use("/products", productRoutes);
 
+// Setea 'user' dentro de locals para usarla despues
+app.locals.user = null;
+
 //404
 app.get("*", (req, res) => {
     res.send("Error 404 - No encontramos esta página :/");

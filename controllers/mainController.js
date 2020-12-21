@@ -5,7 +5,6 @@ const mainController = {
         const products = getProducts();
         res.render("index", {
             products: products,
-            user: req.loggedUser,
         });
     },
     search: (req, res) => {
