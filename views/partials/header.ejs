@@ -27,6 +27,8 @@
     </ul>
     <ul>
         <li>
+            <% if (!user) { %>
+             
             <a href="/auth/register"
                 >Creá tu cuenta <i class="far fa-id-card"></i
             ></a>
@@ -34,8 +36,14 @@
         <li>
             <a href="/auth/login">Ingresá <i class="fas fa-sign-in-alt"></i></a>
         </li>
+
+        <% } else { %>
+        <li class="welcome-message">
+           ¡Bienvenido, <%= user ? user.name : "invitado" %>!
+        </li>
         <li>
             <a href="#">Mis compras <i class="fas fa-shopping-bag"></i></a>
         </li>
+        <% } %>
     </ul>
 </nav>

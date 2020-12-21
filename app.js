@@ -5,6 +5,7 @@ const session = require("express-session");
 const mainRoutes = require("./routes/mainRoutes");
 const productRoutes = require("./routes/productRoutes");
 const authRoutes = require("./routes/authRoutes");
+const authenticateMiddleware = require("./middlewares/authenticateMiddleware");
 
 //Middlewares
 app.use(express.static("public"));
@@ -12,6 +13,7 @@ app.use(methodOverride("_method"));
 app.use(session({ secret: "Mensaje secreto" }));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(authenticateMiddleware);
 
 //Motor de vistas
 app.set("view engine", "ejs");

@@ -5,7 +5,7 @@ const mainController = require("../controllers/mainController");
 
 const authenticateMiddleware = require("../middlewares/authenticateMiddleware");
 
-router.all("/", authenticateMiddleware, mainController.main);
+router.all("/", mainController.main);
 
 router.get("/search", mainController.search);
 
