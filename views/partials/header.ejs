@@ -39,10 +39,10 @@
 
         <% } else { %>
         <li class="welcome-message">
-           ¡Bienvenido, <%= user ? user.name : "invitado" %>!
+            <i class="fas fa-user"></i> ¡Bienvenido, <%= user ? user.name : "invitado" %>!
         </li>
         <li>
-            <a href="#">Mis compras <i class="fas fa-shopping-bag"></i></a>
+            <a href="#"><i class="fas fa-shopping-bag"></i> Mis compras</a>
         </li>
         <% } %>
     </ul>
