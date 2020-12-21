@@ -2,6 +2,18 @@ const express = require("express");
 const app = express();
 const methodOverride = require("method-override");
 const session = require("express-session");
+const mainRoutes = require("./routes/mainRoutes");
+const productRoutes = require("./routes/productRoutes");
+const authRoutes = require("./routes/authRoutes");
+
+app.use(express.static("public"));
+
+app.use(methodOverride("_method"));
+
+app.use(session({ secret: "Mensaje secreto" }));
+
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 app.set("view engine", "ejs");
 app.set("views", [
@@ -10,19 +22,6 @@ app.set("views", [
     __dirname + "/views/products",
     __dirname + "/views/partials",
 ]);
-
-app.use(express.static("public"));
-
-app.use(session({ secret: "Mensaje secreto" }));
-
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-
-app.use(methodOverride("_method"));
-
-const mainRoutes = require("./routes/mainRoutes");
-const productRoutes = require("./routes/productRoutes");
-const authRoutes = require("./routes/authRoutes");
 
 app.listen(3000, () => {
     console.log("Server running on port 3000.");
