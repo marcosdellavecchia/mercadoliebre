@@ -3,6 +3,8 @@ const router = express.Router();
 const path = require("path");
 const multer = require("multer");
 const productController = require("../controllers/productController");
+const assertLoggedMiddleware = require("../middlewares/assertLoggedMiddleware")
+const assertAdminMiddleware = require('../middlewares/assertAdminMiddleware');
 const logDBMiddleware = require("../middlewares/logDBMiddleware");
 
 const storage = multer.diskStorage({
@@ -21,11 +23,11 @@ const upload = multer({ storage: storage });
 
 router.get("/", productController.index);
 
-router.get("/create", productController.showCreate);
+router.get("/create", assertLoggedMiddleware, productController.showCreate);
 
-router.get("/edit/:id", productController.showEdit);
+router.get("/edit/:id", assertAdminMiddleware, productController.showEdit);
 
-router.get("/delete/:id", productController.showDelete);
+router.get("/delete/:id", assertAdminMiddleware, productController.showDelete);
 
 router.get("/detail/:id/:category?", productController.detail);
 

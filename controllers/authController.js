@@ -46,4 +46,8 @@ module.exports = {
     showRegister: (req, res) => {
         res.render("register");
     },
+    logout: (req, res) => {
+        req.session.loggedUserId = null;
+        res.redirect("/")
+    }
 };

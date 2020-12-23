@@ -1,24 +1,32 @@
 [
-    {
-        "id": 1,
-        "name": "Marcos Della Vecchia",
-        "user": "marcosdv",
-        "email": "marcosdvecchia@gmail.com",
-        "address": "Calel Falsa 123",
-        "profile": "vendedor",
-        "interests": "electro",
-        "pass": "$2b$12$06gQOG6rdtYSKt0oRmbA5OgyNMx9XjXjWJAiZCX2HfbO7uO0wxoNa",
-        "admin": true
-    },
-    {
-        "id": 2,
-        "name": "Usuario de prueba",
-        "user": "test",
-        "email": "test@test.com",
-        "address": "Test address",
-        "profile": "comprador",
-        "interests": "vida-sana",
-        "pass": "$2b$12$/yQvdWESb5tuKQND6HKMrexbM7vthV/xrq8XG7XEruAleFyqMHBH2",
-        "admin": false
-    }
+  {
+    "id": 1,
+    "name": "Usuario Administrador",
+    "user": "admin",
+    "email": "admin@admin.net",
+    "address": "Domicilio de prueba",
+    "profile": "vendedor",
+    "interests": [
+      "electro",
+      "hogar",
+      "jugueteria",
+      "vida-sana",
+      "moda"
+    ],
+    "admin": true,
+    "pass": "$2b$12$V1ZF6d70TcluJNjmI.9IsuhihVMJoCc5D50my7PRDKQQu1xfga9lS"
+  },
+  {
+    "id": 2,
+    "name": "Usuario Prueba",
+    "user": "user",
+    "email": "user@user.net",
+    "address": "Dirección del usuario",
+    "profile": "comprador",
+    "interests": [
+      "electro",
+      "vida-sana"
+    ],
+    "pass": "$2b$12$mSREup5KTn6Q43zGabR4Ruf2xD7IrgfH.2aebjPXxRVcYetDZ.EUy"
+  }
 ]
