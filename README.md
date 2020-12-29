@@ -14,3 +14,7 @@ Clon de Mercado Libre desarrollado utilizando Express para el back-end y EJS com
 - Method Override
 - Multer
 - Bcrypt
+
+# Usuarios y permisos
+- Administrador (admin / admin): Puede crear, editar y borrar productos.
+- Usuario (user / user): Puede crear productos.
