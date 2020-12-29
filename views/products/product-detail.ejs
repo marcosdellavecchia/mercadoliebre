@@ -44,10 +44,12 @@
                     <form action="">
                         <button class="submit" type="submit">Comprar</button>
                     </form>
+                    <% if (loggedUser) { %>
                     <div class="edit-delete" action="">
                         <a href="/products/edit/<%= product.id %>">Editar</a>
                         <a href="/products/delete/<%= product.id %>">Borrar </a>
                     </div>
+                    <% } %>
                 </div>
             </article>
         </main>

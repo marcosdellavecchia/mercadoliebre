@@ -8,13 +8,15 @@ const productController = {
         res.render("product-list", { products: database });
     },
     detail: (req, res) => {
+        const loggedUser = res.locals.user;
         const database = getProducts();
-
         const selectProduct = database.find((product) => {
             return req.params.id == product.id;
         });
+        console.log(loggedUser)
         res.render("product-detail", {
             product: selectProduct,
+            loggedUser: loggedUser,
             toThousand: toThousand,
         });
     },
