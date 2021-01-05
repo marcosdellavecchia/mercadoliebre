@@ -15,39 +15,59 @@
     <i class="fas fa-hand-holding-usd"></i> Comprá en cuotas y sin tarjeta de
     crédito!
 </p>
-<div class="menu-btn">
-    <i class="fas fa-bars"></i>
-</div>
-<nav>
-    <ul>
-        <li><a href="#">Ofertas</a></li>
-        <li><a href="#">Tiendas Oficiales</a></li>
-        <li><a href="/products/create">Vender</a></li>
-        <li><a href="#">Ayuda</a></li>
-    </ul>
-    <ul>
-        <li>
-            <% if (!user) { %>
 
-            <a href="/auth/register"
-                ><i class="far fa-id-card"></i> Creá tu cuenta</a
-            >
-        </li>
-        <li>
-            <a href="/auth/login"><i class="fas fa-sign-in-alt"></i> Ingresá</a>
-        </li>
+<nav class="navbar navbar-expand-md navbar-light">
+    <div class="container-fluid">
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <% } else { %>
-        <li class="welcome-message">
-            <i class="fas fa-user"></i> ¡Bienvenido, <%= user ? user.name :
-            "invitado" %>!
-        </li>
-        <li>
-            <a href="#"><i class="fas fa-shopping-bag"></i> Mis compras</a>
-        </li>
-        <li>
-            <a href="/auth/logout"><i class="fas fa-sign-out-alt"></i> Salir</a>
-        </li>
-        <% } %>
-    </ul>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" href="#">Ofertas</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#">Tiendas Oficiales</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/products/create">Vender</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#">Ayuda</a></li>
+            </ul>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <% if (!user) { %>
+
+                    <a class="nav-link active" href="/auth/register"
+                        ><i class="far fa-id-card"></i> Creá tu cuenta</a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/auth/login"
+                        ><i class="fas fa-sign-in-alt"></i> Ingresá</a
+                    >
+                </li>
+
+                <% } else { %>
+                <li class="class="nav-item welcome-message">
+                    <i class="nav-link active fas fa-user"></i> ¡Bienvenido, <%= user ?
+                    user.name : "invitado" %>!
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#"
+                        ><i class="fas fa-shopping-bag"></i> Mis compras</a
+                    >
+                </li class="nav-item">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/auth/logout"
+                        ><i class="fas fa-sign-out-alt"></i> Salir</a
+                    >
+                </li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
 </nav>
