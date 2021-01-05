@@ -333,3 +333,10 @@ form button {
         font-size: 14px;
     }
 }
+
+/* Fix Bootstrap Nav Padding */
+
+.navbar-nav {
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
